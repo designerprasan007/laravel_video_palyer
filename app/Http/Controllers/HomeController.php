@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function setting(Request $request)
+    {
+        return view('auth.setting');
+    }
+    public function trending(Request $request)
+    {
+        return view('auth.trending');
+    }
 }

@@ -23,5 +23,7 @@ Route::resources(['videos'=>'VideoController']);
 
 
 Auth::routes();
+Route::get('/setting', 'HomeController@setting');
+Route::get('/trending', 'HomeController@trending');
 
 Route::get('/home', 'HomeController@index')->name('home');
