@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('content')
-<h3 class="py-3 px-3 bg-info">Trending</h3>
+@section('content') 
+<h3 class="py-3 px-3 bg-info">Sports</h3>
 
 <div class="container-fluid pt-5">
     <div class="row no-gutters">
@@ -160,7 +160,4 @@
 </div>
   </div>
  @endsection
-
-  </body>
-  </html>
 

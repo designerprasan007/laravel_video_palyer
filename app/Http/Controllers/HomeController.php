@@ -33,4 +33,8 @@ class HomeController extends Controller
     {
         return view('auth.trending');
     }
+    public function sports(Request $request)
+    {
+        return view('auth.sports');
+    }
 }
