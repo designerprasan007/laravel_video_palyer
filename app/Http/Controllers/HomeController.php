@@ -37,4 +37,16 @@ class HomeController extends Controller
     {
         return view('auth.sports');
     }
+    public function edit(Request $request)
+    {
+        return view('edit');
+    }
+    public function show(Request $request)
+    {
+        return view('show');
+    }
+    public function destroy(Request $request)
+    {
+        return view('destroy');
+    }
 }

@@ -60,7 +60,9 @@ class VideoController extends Controller
      */
     public function edit(video $video)
     {
-        //
+        $videos = video::all();
+        return view('edit', compact(['videos']));
+
     }
 
     /**
@@ -72,7 +74,15 @@ class VideoController extends Controller
      */
     public function update(Request $request, video $video)
     {
-        //
+        $video = new video();
+        $data = $this->validate($request, [
+            'description'=>'required',
+            'title'=> 'required'
+        ]);
+        $data['id'] = $id;
+        $video->updatevideo($data);
+
+        return redirect('/home')->with('success', 'New support ticket has been updated!!');
     }
 
     /**
