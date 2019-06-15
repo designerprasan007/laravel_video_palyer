@@ -49,7 +49,8 @@ class VideoController extends Controller
      */
     public function show(video $video)
     {
-        //
+        return view('show', compact(['video']));
+
     }
 
     /**
@@ -60,8 +61,7 @@ class VideoController extends Controller
      */
     public function edit(video $video)
     {
-        $videos = video::all();
-        return view('edit', compact(['videos']));
+        return view('edit', compact(['video']));
 
     }
 
@@ -76,13 +76,15 @@ class VideoController extends Controller
     {
         $video = new video();
         $data = $this->validate($request, [
-            'description'=>'required',
-            'title'=> 'required'
+            'video'=>'required',
+            'title'=> 'required',
+            'description'=>'required'
         ]);
+        $video->save();
         $data['id'] = $id;
         $video->updatevideo($data);
-
-        return redirect('/home')->with('success', 'New support ticket has been updated!!');
+        return redirect('/home')->with('success', 'New support video has been updated!!');
+        
     }
 
     /**
@@ -91,8 +93,10 @@ class VideoController extends Controller
      * @param  \App\video  $video
      * @return \Illuminate\Http\Response
      */
-    public function destroy(video $video)
+    public function destroy($id)
     {
-        //
+        $video = video::find($id);
+        $video->delete();
+        return redirect('/videos')->with('success', 'video has been deleted!!');
     }
 }

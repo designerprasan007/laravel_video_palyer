@@ -5,16 +5,31 @@
 <body>
     <div class="container">
 <h1>Live Telecasts</h1>
-@foreach($videos as $video)
-<div class="container">
-<h1>{{ $video->video }}</h1>
-    <div class="card-body">
-        <h5 class="card-title">{{ $video->title }}</h5>
-        <p class="card-text">{{ $video->description }}</p>
-        <p>{{ $video->action }}
-        <a href="/show" class="btn btn-success">show</a>
-        <a href="/edit" class="btn btn-info">edit</a>
-        <a href="/destroy" class="btn btn-danger">delete</a></p>
+<table class="table table-striped">
+        <thead>
+            <tr>
+              <td>ID</td>
+              <td>video</td>
+              <td>Title</td>
+              <td>Description</td>
+              <td colspan="3">Action</td>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach($videos as $video)
+    <tr>
+        <td>{{$video->id}}</td>
+        <td>{{$video->video}}</td>
+        <td>{{$video->title}}</td>
+        <td>{{$video->description}}</td>
+        <td><a href="{{route('videos.show',$video)}}" class="btn btn-success">show</a></td>
+        <td><a href="{{route('videos.edit',$video)}}" class="btn btn-primary">Edit</a></td>
+       <td> <form action="{{route('videos.destroy', $video)}}" method="post">
+            {{csrf_field()}}
+            <input name="_method" type="hidden" value="DELETE">
+            <button class="btn btn-danger" type="submit">Delete</button>
+            </form></td>
+    </tr>
     </div>
 </div>
 @endforeach

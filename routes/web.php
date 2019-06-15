@@ -19,13 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resources(['videos'=>'VideoController']);
-Route::get('/views/edit','VideoController@edit');
-Route::post('/views/video','VideoController@destroy');
+Route::patch('/views/edit','VideoController@edit');
+Route::get('/views/show', 'VideoController@show');
+Route::delete('/delete/video/{id}','VideoController@destroy');
 Auth::routes();
 Route::get('/setting', 'HomeController@setting');
 Route::get('/trending', 'HomeController@trending');
 Route::get('/sports', 'HomeController@sports');
-Route::get('/edit', 'HomeController@edit');
-Route::get('/show', 'HomeController@show');
-Route::get('/destroy', 'HomeController@destroy');
 Route::get('/home', 'HomeController@index')->name('home');
