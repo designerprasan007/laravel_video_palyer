@@ -11,8 +11,9 @@
         </ul>
     </div><br />
 @endif
+<h1 class="text-center"><u>video name:-</u><br>{{$video->video}} </h1>
     <div class="row">
-    <form method="PATCH" action="{{ route('videos.update', '$edit')}}" >
+    <form method="POST" action="{{ route('videos.update',$video)}}" >
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         <div class="form-group">

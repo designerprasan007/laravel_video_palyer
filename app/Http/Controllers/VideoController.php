@@ -62,6 +62,7 @@ class VideoController extends Controller
     public function edit(video $video)
     {
         return view('edit', compact(['video']));
+        return redirect('/videos')->with('success', 'Ticket has been deleted!!');
 
     }
 
@@ -74,16 +75,15 @@ class VideoController extends Controller
      */
     public function update(Request $request, video $video)
     {
-        $video = new video();
         $data = $this->validate($request, [
             'video'=>'required',
             'title'=> 'required',
             'description'=>'required'
         ]);
+        $video->update($request->all());
+
         $video->save();
-        $data['id'] = $id;
-        $video->updatevideo($data);
-        return redirect('/home')->with('success', 'New support video has been updated!!');
+        return redirect('videos')->with('success', 'New support video has been updated!!');
         
     }
 
@@ -98,5 +98,10 @@ class VideoController extends Controller
         $video = video::find($id);
         $video->delete();
         return redirect('/videos')->with('success', 'video has been deleted!!');
+    }
+    public function admin(video $video)
+    {
+        return view('admin', compact(['video']));
+
     }
 }

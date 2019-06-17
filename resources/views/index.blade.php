@@ -12,7 +12,7 @@
               <td>video</td>
               <td>Title</td>
               <td>Description</td>
-              <td colspan="3">Action</td>
+              <td colspan="4">Action</td>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +29,7 @@
             <input name="_method" type="hidden" value="DELETE">
             <button class="btn btn-danger" type="submit">Delete</button>
             </form></td>
+            <td><a href="{{('/admin')}}" class="btn btn-info">Upload</a></td>
     </tr>
     </div>
 </div>

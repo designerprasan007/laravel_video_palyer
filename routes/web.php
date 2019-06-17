@@ -27,3 +27,5 @@ Route::get('/setting', 'HomeController@setting');
 Route::get('/trending', 'HomeController@trending');
 Route::get('/sports', 'HomeController@sports');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'VideoController@admin');
+
