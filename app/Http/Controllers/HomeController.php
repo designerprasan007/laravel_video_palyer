@@ -33,8 +33,12 @@ class HomeController extends Controller
     {
         return view('auth.sports');
     }
-    public function admin(Request $request)
+    public function user(Request $request)
     {
-        return view('admin');
+        return view('user');
+    }
+    public function live(Request $request)
+    {
+        return view('live');
     }
 }

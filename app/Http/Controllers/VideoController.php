@@ -87,8 +87,12 @@ class VideoController extends Controller
         $video->delete();
         return redirect('/videos')->with('success', 'video has been deleted!!');
     }
-    public function admin(video $video)
+    public function user(video $video)
     {
-        return view('admin', compact(['video']));
+        return view('user', compact(['video']));
+    }
+    public function live(video $video)
+    {
+        return view('live', compact(['video']));
     }
 }

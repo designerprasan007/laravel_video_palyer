@@ -29,7 +29,7 @@
             <input name="_method" type="hidden" value="DELETE">
             <button class="btn btn-danger" type="submit">Delete</button>
             </form></td>
-            <td><a href="{{route('admin',$video)}}" class="btn btn-info">Upload</a></td>
+            <td><a href="{{route('user',$video)}}" class="btn btn-info">Upload</a></td>
     </tr>
     </div>
 </div>

@@ -22,12 +22,12 @@ Route::resources(['videos'=>'VideoController']);
 Route::patch('/views/edit','VideoController@edit');
 Route::get('/views/show', 'VideoController@show');
 Route::delete('/delete/video/{id}','VideoController@destroy');
-Route::get('/admin', 'VideoController@admin')->name('admin');
+Route::get('/user/{video}', 'VideoController@user')->name('user');
+Route::get('/live/{video}', 'VideoController@live')->name('live');
 Auth::routes();
 Route::get('/setting', 'HomeController@setting');
 Route::get('/trending', 'HomeController@trending');
 Route::get('/sports', 'HomeController@sports');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/views/admin', 'VideoController@admin');
 
 
