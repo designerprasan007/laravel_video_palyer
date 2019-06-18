@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\video;
 use Illuminate\Http\Request;
-
 class VideoController extends Controller
 {
     /**
@@ -17,7 +14,6 @@ class VideoController extends Controller
        $videos=video::all();
        //dd($videos);
        return view('index',compact(['videos']));
-
     }
     /**
      * Show the form for creating a new resource.
@@ -28,7 +24,6 @@ class VideoController extends Controller
     {
         return view('create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -40,7 +35,6 @@ class VideoController extends Controller
            $video=video::create($request->all());
            return redirect()->route('videos.index');
     }
-
     /**
      * Display the specified resource.
      *
@@ -50,9 +44,7 @@ class VideoController extends Controller
     public function show(video $video)
     {
         return view('show', compact(['video']));
-
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -63,9 +55,7 @@ class VideoController extends Controller
     {
         return view('edit', compact(['video']));
         return redirect('/videos')->with('success', 'Ticket has been deleted!!');
-
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -81,12 +71,10 @@ class VideoController extends Controller
             'description'=>'required'
         ]);
         $video->update($request->all());
-
         $video->save();
         return redirect('videos')->with('success', 'New support video has been updated!!');
         
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -102,6 +90,5 @@ class VideoController extends Controller
     public function admin(video $video)
     {
         return view('admin', compact(['video']));
-
     }
 }

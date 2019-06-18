@@ -28,7 +28,6 @@
             <label for="description">Description:</label>
             <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
         </div>
-        <a href="{{route('videos.edit',$video)}}" class="btn btn-primary">edit</a>
         <div class="float-right pt-5">
     <a class="btn btn-primary" href="{{ route('videos.index') }}"> Back</a>
 </div>
