@@ -23,7 +23,7 @@ Route::patch('/views/edit','VideoController@edit');
 Route::get('/views/show', 'VideoController@show');
 Route::delete('/delete/video/{id}','VideoController@destroy');
 Route::get('/user/{video}', 'VideoController@user')->name('user');
-Route::get('/live/{video}', 'VideoController@live')->name('live');
+Route::get('/live', 'VideoController@live')->name('live');
 Auth::routes();
 Route::get('/setting', 'HomeController@setting');
 Route::get('/trending', 'HomeController@trending');
