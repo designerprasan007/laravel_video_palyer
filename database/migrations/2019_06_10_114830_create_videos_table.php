@@ -16,7 +16,9 @@ class CreateVideosTable extends Migration
             $table->string('video');
             $table->string('title');
             $table->string('description');
-            $table->string('comment');
+            $table->string('comment')->nullable();
+            $table->Integer('likes')->default(0);
+            $table->Integer('dislikes')->default(0);
             $table->timestamps();
         });
     }

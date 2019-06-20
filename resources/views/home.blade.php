@@ -18,7 +18,6 @@
 <tr>video <input type="text" name="video"></tr>
 <tr>title <input type="text" name="title"></tr>
 <tr>description <input type="textarea" name="description"></textarea></tr>
-<tr>comment <input type="textarea" name="comment"></textarea></tr>
 </table>
     <div class="pt-3"></div>
 <button type="submit">done</button>

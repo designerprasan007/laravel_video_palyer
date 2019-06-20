@@ -54,7 +54,7 @@ class VideoController extends Controller
     public function edit(video $video)
     {
         return view('edit', compact(['video']));
-        return redirect('/videos')->with('success', 'Ticket has been deleted!!');
+        return redirect('/videos');
     }
     /**
      * Update the specified resource in storage.
@@ -92,8 +92,10 @@ class VideoController extends Controller
     {
         return view('user', compact(['video']));
     }
-    public function live( video $video)
+    public function live()
     {
-        return view('live', compact(['video']));
+        $videos=video::all();
+        return view('live', compact(['videos']));
+        return redirect('/live');
     }
 }

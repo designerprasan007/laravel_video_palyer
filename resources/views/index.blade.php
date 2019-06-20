@@ -13,8 +13,7 @@
               <td>video</td>
               <td>Title</td>
               <td>Description</td>
-              <td>comment</td>
-              <td colspan="4">Action</td>
+              <td colspan="3">Action</td>
             </tr>
         </thead>
         <tbody>
@@ -24,7 +23,6 @@
         <td>{{$video->video}}</td>
         <td>{{$video->title}}</td>
         <td>{{$video->description}}</td>
-        <td>{{$video->comment}}</td>
         <td><a href="{{route('videos.show',$video)}}" class="btn btn-success">show</a></td>
         <td><a href="{{route('videos.edit',$video)}}" class="btn btn-primary">Edit</a></td>
        <td> <form action="{{route('videos.destroy', $video)}}" method="post">
