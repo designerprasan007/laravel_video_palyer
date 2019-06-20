@@ -1,50 +1,198 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Live Telecasts</h1>
+<form method="POST" action="{{ route('videos.store') }}"  >
+    {{ csrf_field() }}
+    <h3 class="py-3 px-3 bg-info">Live telecast</h3>
 
-    <section class="container">
-  <img class="img-fluid" style=height:450px; width=1500px; src='{{ asset("images/42621.jpg") }}' alt="video">
-<div class="card-body" name="video" value="{{$video->video}}">
-    <h5 class="card-title" name="title" value="{{$video->title}}">Viddeo Title</h5>
-    <p class="card-text" name="description" value="{{$video->description}}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-</div>    
-</section>
-<h1 class="bg-info pl-5">Trending</h1>
+    <div class="container">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
+      </form>
+    </div>
+</div>
+<!-- trending -->
+<h3 class="py-3 px-3 bg-info">Trending</h3>
 <div class="container">
-<article class="row">
-<div class="col-md-4">
-<div class="card">
-  <img class="card-img-top" src='{{ asset("images/42621.jpg") }}' alt="video">
-<div class="card-body" name="video" value="{{$video->video}}">
-    <h5 class="card-title" name="title" value="{{$video->title}}">Viddeo Title</h5>
-    <p class="card-text" name="description" value="{{$video->description}}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" href="{{ route('videos.index') }}"> Back</a>
+  <div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
+</div>
+</form>
+   <!-- 2nd video -->
+   <div class="col-md-3">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
+</div>
+</form>
+<!-- 3rd video -->
+<div class="col-md-3">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
+</div>
+</form>
+<!-- 4thvideo -->
+<div class="col-md-3">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
+</div>
+</form>
 </div>
 </div>
+             <!-- popular -->
+             <h3 class="py-3 px-3 bg-info">Popular</h3>
+             <div class="container">
+  <div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
 </div>
-<div class="col-md-4">
-  <div class="card">
-  <img class="card-img-top" src='{{ asset("images/42621.jpg") }}' alt="video">
-  <div class="card-body" name="video" value="{{$video->video}}">
-    <h5 class="card-title" name="title" value="{{$video->title}}">Viddeo Title</h5>
-    <p class="card-text" name="description" value="{{$video->description}}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" href="{{ route('videos.index') }}"> Back</a>
-  </div>
-  </div>
+</form>
+   <!-- 2nd video -->
+   <div class="col-md-3">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
 </div>
-<div class="col-md-4">
-  <div class="card">
-  <img class="card-img-top" src='{{ asset("images/42621.jpg") }}' alt="video">
-  <div class="card-body" name="video" value="{{$video->video}}">
-    <h5 class="card-title" name="title" value="{{$video->title}}">Viddeo Title</h5>
-    <p class="card-text" name="description" value="{{$video->description}}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a class="btn btn-primary" href="{{ route('videos.index') }}"> Back</a>
-  </div>
-  </div>
+</form>
+<!-- 3rd video -->
+<div class="col-md-3">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
 </div>
-</article>
+</form>
+<!-- 4thvideo -->
+<div class="col-md-3">
+        <div class="form-group">
+            <label for="title">video:</label>
+            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
 </div>
-
+</form>
+</div>
+</div>
 @endsection
-

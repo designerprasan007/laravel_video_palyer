@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <body>
     <div class="container">
+    
 <h1>Live Telecasts</h1>
 <table class="table table-striped">
         <thead>
@@ -12,6 +13,7 @@
               <td>video</td>
               <td>Title</td>
               <td>Description</td>
+              <td>comment</td>
               <td colspan="4">Action</td>
             </tr>
         </thead>
@@ -22,6 +24,7 @@
         <td>{{$video->video}}</td>
         <td>{{$video->title}}</td>
         <td>{{$video->description}}</td>
+        <td>{{$video->comment}}</td>
         <td><a href="{{route('videos.show',$video)}}" class="btn btn-success">show</a></td>
         <td><a href="{{route('videos.edit',$video)}}" class="btn btn-primary">Edit</a></td>
        <td> <form action="{{route('videos.destroy', $video)}}" method="post">
@@ -29,12 +32,13 @@
             <input name="_method" type="hidden" value="DELETE">
             <button class="btn btn-danger" type="submit">Delete</button>
             </form></td>
-            <td><a href="{{route('user',$video)}}" class="btn btn-info">Upload</a></td>
     </tr>
     </div>
 </div>
 @endforeach
 </table>
+<a href="{{route('live')}}" class="btn btn-info">Upload</a>
+
 </div>
 @endsection
 </body>

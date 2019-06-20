@@ -68,7 +68,8 @@ class VideoController extends Controller
         $data = $this->validate($request, [
             'video'=>'required',
             'title'=> 'required',
-            'description'=>'required'
+            'description'=>'required',
+            'comment'=>'required'
         ]);
         $video->update($request->all());
         $video->save();
@@ -91,7 +92,7 @@ class VideoController extends Controller
     {
         return view('user', compact(['video']));
     }
-    public function live(video $video)
+    public function live( video $video)
     {
         return view('live', compact(['video']));
     }

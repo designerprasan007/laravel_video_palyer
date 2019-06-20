@@ -1,8 +1,10 @@
 <?php
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-class CreateVideosTable extends Migration
+
+class CreateCommentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -11,15 +13,17 @@ class CreateVideosTable extends Migration
      */
     public function up()
     {
-        Schema::create('videos', function (Blueprint $table) {
+        Schema::create('comment', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('video');
-            $table->string('title');
-            $table->string('description');
             $table->string('comment');
+            $table->unsignedBigInteger('video_id');
+            $table->foreign('video_id')->references('id')->on('videos');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -27,6 +31,6 @@ class CreateVideosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('videos');
+        Schema::dropIfExists('comment');
     }
 }

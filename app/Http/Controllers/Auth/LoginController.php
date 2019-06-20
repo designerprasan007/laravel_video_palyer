@@ -24,11 +24,14 @@ class LoginController extends Controller
      *
      * @var string
      */
+    protected $redirectTo = '/live';
     protected function authenticated($request, $user)
     {
-        if($user_type='0') {
+        
+        if($user->user_type == 1) {
             return redirect('/home');
-        } elseif ($user_type='1') {
+        }
+        elseif($user->user_type == 0){
             return redirect('/live');
         }
     }

@@ -28,6 +28,10 @@
             <label for="description">Description:</label>
             <textarea cols="5" rows="5" class="form-control" name="description">{{$video->description}} </textarea>
         </div>
+        <div class="form-group">
+            <label for="comment">comment:</label>
+            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+        </div>
         <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
