@@ -5,27 +5,26 @@
     <h3 class="py-3 px-3 bg-info">Live telecast</h3>
     @foreach($videos as $video)
     <div class="container">
-        <div class="form-group">
-            <label for="title">video:</label>
-            <input type="text" class="form-control" name="video" value="{{$video->video}}" readonly>
-        </div>
-        <div class="form-group">
+    <div class="card">
+            {!!$video->video!!}<iframe width="560" height="315" src="https://www.youtube.com/embed/JlE55lkKGzE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <label for="title">Title:</label>
             <input type="text" class="form-control" name="title" value="{{$video->title}}" readonly>
-        </div>
-        <div class="form-group">
             <label for="description">Description:</label>
-            <textarea cols="5" rows="5" class="form-control" name="description" readonly>{{$video->description}} </textarea>
-        </div>
-        <button class="btn btn-outline-dark" name="likes" value="likes">like<i class="far fa-thumbs-up pl-3"></i></button class="btn btn-outline-dark">
-        <button class="btn btn-outline-dark" name="dislikes" value="dislikes">dislike<i class="far fa-thumbs-down pl-3"></i></button>   
-        <div class="form-group">
+            <textarea cols="5" rows="2" class="form-control" name="description" readonly>{{$video->description}} </textarea>
+       <div class="row pt-3">
+       <div class="col-md-4">
+       <button class="btn btn-outline-dark">like<i class="far fa-thumbs-up px-2"></i></button>
+       </div>
+       <div class="col-md-8">
+       <button class="btn btn-outline-dark">dislike<i class="far fa-thumbs-down px-2"></i></button>
+       </div>
+       </div>
             <label for="comment">comment:</label>
-            <textarea cols="5" rows="5" class="form-control" name="comment">{{$video->comment}} </textarea>
+            <textarea cols="5" rows="2" class="form-control" name="comment">{{$video->comment}} </textarea>
+     <div class="col-md-3 py-3"> 
+        <button type="submit" class="btn btn-primary">submit</button>
         </div>
-     
-        <button type="submit" class="btn btn-primary">Update</button>
-
+    </div>
     </div>
     <hr>
         @endforeach

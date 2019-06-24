@@ -32,8 +32,8 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-           $video=video::create($request->all());
-           return redirect()->route('videos.index');
+    $video=video::create($request->all());
+    return redirect()->route('videos.index');
     }
     /**
      * Display the specified resource.
@@ -97,5 +97,18 @@ class VideoController extends Controller
         $videos=video::all();
         return view('live', compact(['videos']));
         return redirect('/live');
+    }
+    public function like(Request $request, $id)
+    {
+        $action = $request->get('action');
+        switch ($action) {
+            case 'Like':
+                video::where('id', $id)->increment('likes_count');
+                break;
+            case 'Unlike':
+                video::where('id', $id)->decrement('likes_count');
+                break;
+        }
+        return '';
     }
 }

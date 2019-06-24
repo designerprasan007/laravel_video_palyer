@@ -15,7 +15,7 @@
 <form method="POST" class="pl-5 pt-5" action="{{ route('videos.store') }}">
         {{ csrf_field() }}
         <table>
-<tr>video <input type="text" name="video"></tr>
+<tr>video <input type="video" name="video"></tr>
 <tr>title <input type="text" name="title"></tr>
 <tr>description <input type="textarea" name="description"></textarea></tr>
 </table>

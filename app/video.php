@@ -20,7 +20,7 @@ class video extends Model
         $video->video = $data['video'];
         $video->title = $data['title'];
         $video->description = $data['description'];
-        $video->comment = $data['comment'];
+        $video->comment = $data['comment']->referance['videos'];
         $video->likes = $data['likes'];
         $video->dislikes = $data['dislikes'];
         $video->save();

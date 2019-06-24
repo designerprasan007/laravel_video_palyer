@@ -24,6 +24,7 @@ Route::get('/views/show', 'VideoController@show');
 Route::delete('/delete/video/{id}','VideoController@destroy');
 Route::get('/views/user', 'VideoController@user')->name('user');
 Route::get('/live', 'VideoController@live')->name('live');
+Route::post('/like/video/{id}', 'VideoController@like');
 Auth::routes();
 Route::get('/setting', 'HomeController@setting');
 Route::get('/trending', 'HomeController@trending');
